@@ -18,7 +18,10 @@ pygame.display.set_caption('WARIOR')
 #font
 font = pygame.font.SysFont('Times New Roman', 26)
 
-#fighter
+#color
+red = (255, 0, 0)
+green = (0, 255, 0)
+
 
 
 #background
@@ -29,10 +32,27 @@ def draw_bg():
     display_surface.blit(bg_image,(0,0))
 
 
+class HealthBar():
+     def __init__(self, x, y, hp, max_hp):
+          self.hp = hp
+          self.x = x
+          self.y = y
+          self.max_hp = max_hp
+
+     def draw(self,hp):
+          self.hp = hp
+          ratio = self.hp / self.max_hp
+          pygame.draw.rect(display_surface, red, (self.x, self.y, 150, 20))
+          pygame.draw.rect(display_surface, green, (self.x, self.y, 150 * ratio, 20))
+
+
+
 Knight = Fighter(200, 260, 'knight', 30, 10, 3)
 mage = Mage (600, 260, 'mage', 30, 8, 2)
-running = True
 
+Knight_health_bar = HealthBar(100, windowheight - bottompanel + 40, Knight.hp, Knight.max_hp)
+mage_health_bar = HealthBar(100, windowheight - bottompanel + 40, mage.hp, Knight.max_hp)
+running = True
 
 while running:
     

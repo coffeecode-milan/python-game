@@ -1,15 +1,18 @@
 import pygame
 
 class Fighter():
-    def __init__(self, x, y, name, max_hp, strength, position):
+    def __init__(self, x, y, name, hp, max_hp, strength, position):
         self.name = name 
+        self.hp = hp
+        self.strength = strength
+        self.position = position
         self.max_hp = max_hp
         self.alive = True
         self.animation_list = []
         self.frame_index = 0
         self.action = 6 #0:attack, 1:attack extra 
 
-        #load Attack
+        #load Attackh
         attack_list = []
         for i in range(4):
              img = pygame.image.load(f"main/characters/PNG/Knight/Attack/attack{i}.png").convert_alpha()
