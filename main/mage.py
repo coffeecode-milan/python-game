@@ -1,9 +1,12 @@
 import pygame
 
 class Mage():
-    def __init__(self, x, y, name, max_hp, strength, position):
+    def __init__(self, x, y, name, hp, max_hp, strength, position= "right"):
         self.name = name
+        self.hp = hp
         self.max_hp = max_hp
+        self.strength = strength
+        self.position = position
         self.alive = True
         self.animation_list = []
         self.frame_index = 0

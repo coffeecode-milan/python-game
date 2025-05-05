@@ -1,7 +1,7 @@
 import pygame
 
 class Fighter():
-    def __init__(self, x, y, name, hp, max_hp, strength, position):
+    def __init__(self, x, y, name, hp, max_hp, strength, position = "left"):
         self.name = name 
         self.hp = hp
         self.strength = strength
